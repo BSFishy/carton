@@ -1,4 +1,5 @@
 use std::ops;
+use std::fmt;
 
 #[derive(Debug, PartialEq)]
 pub struct Size {
@@ -48,6 +49,12 @@ impl Size {
 impl Default for Size {
     fn default() -> Self {
         Self::new(0, 0)
+    }
+}
+
+impl fmt::Display for Size {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{}x{}", self.width, self.height)
     }
 }
 

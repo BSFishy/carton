@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 carton_provider = { path = "../carton_provider", version = "0.1.0" }
+carton_window = { path = "../carton_window", version = "0.1.0" }

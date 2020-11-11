@@ -1,22 +1,16 @@
-use carton_common::{ Size, Point };
+use carton_common::{ HasTitle, HasPosition, HasSize };
 use carton_view::View;
 
-pub trait Window {
-    fn get_title(&self) -> String;
+pub trait Window: HasTitle + HasPosition + HasSize {
+    // fn new() -> Self where Self: Sized;
 
-    fn set_title(&self, title: String) -> Self;
+    fn show(&self);
 
-    fn get_size(&self) -> Size;
+    fn hide(&self);
 
-    fn set_size(&self, size: Size) -> Self;
+    fn get_body(&self) -> Box<dyn View>;
 
-    fn get_position(&self) -> Point;
-
-    fn set_position(&self, position: Point) -> Self;
-
-    fn get_view(&self) -> Box<dyn View>;
-
-    fn set_view(&self, view: Box<dyn View>) -> Self;
+    fn set_body(&mut self, view: Box<dyn View>);
 
     fn run(&self);
 

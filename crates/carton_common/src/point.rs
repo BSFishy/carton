@@ -1,4 +1,5 @@
 use std::ops;
+use std::fmt;
 
 #[derive(Debug, PartialEq)]
 pub struct Point {
@@ -67,6 +68,12 @@ impl Point {
 impl Default for Point {
     fn default() -> Self {
         Self::new(0f32, 0f32)
+    }
+}
+
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({}, {})", self.x, self.y)
     }
 }
 

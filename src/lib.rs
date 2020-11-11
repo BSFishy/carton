@@ -3,6 +3,7 @@ pub use carton_provider::Provider;
 
 pub use carton_view::View;
 pub use carton_window::Window;
+use std::ops::Deref;
 
 pub mod error;
 
@@ -15,18 +16,22 @@ impl Carton {
         Err("")
     }
 
-    pub unsafe fn add_platform(platform: Box<dyn Platform>) {
-        PLATFORMS.insert(0, platform)
+    pub fn add_platform(platform: Box<dyn Platform>) {
+        unsafe {
+            PLATFORMS.insert(0, platform)
+        }
     }
 
     pub fn add_default_platforms() {
         // TODO(BSFishy): add default platforms here
     }
 
-    pub unsafe fn get_current_platform<'a>() -> Result<&'a Box<dyn Platform>, error::NoPlatformError> {
-        for platform in PLATFORMS.iter() {
-            if platform.is_supported() {
-                return Ok(platform);
+    pub fn get_current_platform<'a>() -> Result<&'a dyn Platform, error::NoPlatformError> {
+        unsafe {
+            for platform in PLATFORMS.iter() {
+                if platform.is_supported() {
+                    return Ok(platform.deref());
+                }
             }
         }
 

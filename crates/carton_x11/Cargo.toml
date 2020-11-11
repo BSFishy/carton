@@ -8,3 +8,10 @@ edition = "2018"
 [features]
 
 [dependencies]
+libc = "^0.2.80"
+
+carton_common = { path = "../carton_common", version = "0.1.0" }
+carton_platform = { path = "../carton_platform", version = "0.1.0" }
+carton_provider = { path = "../carton_provider", version = "0.1.0" }
+carton_window = { path = "../carton_window", version = "0.1.0" }
+carton_view = { path = "../carton_view", version = "0.1.0" }
