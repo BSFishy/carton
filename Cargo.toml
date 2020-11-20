@@ -6,33 +6,10 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]
-default = ["widgets", "x11"]
 
-widgets = ["carton_widgets"]
-
-macos = ["carton_macos"]
-wayland = ["carton_wayland"]
-web = ["carton_web"]
-windows = ["carton_windows"]
-x11 = ["carton_x11"]
 
 [workspace]
 members = ["crates/*"]
 
 [dependencies]
-carton_common = { path = "crates/carton_common", version = "0.1.0" }
-carton_ll = { path = "crates/carton_ll", version = "0.1.0" }
-carton_platform = { path = "crates/carton_platform", version = "0.1.0" }
-carton_provider = { path = "crates/carton_provider", version = "0.1.0" }
-carton_draw = { path = "crates/carton_draw", version = "0.1.0" }
-carton_input = { path = "crates/carton_input", version = "0.1.0" }
-carton_view = { path = "crates/carton_view", version = "0.1.0" }
-carton_window = { path = "crates/carton_window", version = "0.1.0" }
 
-carton_widgets = { path = "crates/carton_widgets", version = "0.1.0", optional = true }
-
-carton_macos = { path = "crates/carton_macos", version = "0.1.0", optional = true }
-carton_wayland = { path = "crates/carton_wayland", version = "0.1.0", optional = true }
-carton_web = { path = "crates/carton_web", version = "0.1.0", optional = true }
-carton_windows = { path = "crates/carton_windows", version = "0.1.0", optional = true }
-carton_x11 = { path = "crates/carton_x11", version = "0.1.0", optional = true }
