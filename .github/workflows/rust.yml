@@ -58,6 +58,11 @@ jobs:
     needs: build
     steps:
     - uses: actions/checkout@v2
+    - name: Install Tarpaulin
+      uses: actions-rs/install@v0.1
+      with:
+        crate: cargo-tarpaulin
+        use-tool-cache: true
     - name: Generate coverage
       run: cargo tarpaulin --workspace --release --verbose --all-features --out Xml --timeout 120
     - name: Upload to Codacy
