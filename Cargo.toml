@@ -3,6 +3,12 @@ name = "carton"
 version = "0.1.0"
 authors = ["Matt Provost <mattprovost6@gmail.com>"]
 edition = "2018"
+description = "A modern, cross platform UI library"
+documentation = "https://docs.rs/carton"
+readme = "README.md"
+homepage = "https://github.com/BSFishy/carton"
+repository = "https://github.com/BSFishy/carton"
+license = "MIT"
 
 [features]
 default = ["widgets"]

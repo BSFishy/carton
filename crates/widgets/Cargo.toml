@@ -3,6 +3,11 @@ name = "carton_widgets"
 version = "0.1.0"
 authors = ["Matt Provost <mattprovost6@gmail.com>"]
 edition = "2018"
+description = "Default widgets for Carton"
+documentation = "https://docs.rs/carton_widgets"
+homepage = "https://github.com/BSFishy/carton"
+repository = "https://github.com/BSFishy/carton"
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
