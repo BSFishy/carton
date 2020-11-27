@@ -4,12 +4,19 @@ version = "0.1.0"
 authors = ["Matt Provost <mattprovost6@gmail.com>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]
+default = ["widgets"]
 
+widgets = ["carton_widgets"]
 
 [workspace]
 members = ["crates/*"]
 
 [dependencies]
+carton_common = { path = "crates/common", version = "0.1" }
+carton_event = { path = "crates/event", version = "0.1" }
+carton_mvvm = { path = "crates/mvvm", version = "0.1" }
+carton_shell = { path = "crates/shell", version = "0.1" }
+carton_window = { path = "crates/window", version = "0.1" }
 
+carton_widgets = { path = "crates/widgets", version = "0.1", optional = true }

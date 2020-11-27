@@ -1,0 +1,18 @@
+[package]
+name = "carton_shell"
+version = "0.1.0"
+authors = ["Matt Provost <mattprovost6@gmail.com>"]
+edition = "2018"
+
+[features]
+default = ["macos", "windows", "x11"]
+
+macos = []
+wayland = []
+windows = []
+x11 = []
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.53.1"
