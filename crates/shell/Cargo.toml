@@ -10,14 +10,21 @@ repository = "https://github.com/BSFishy/carton"
 license = "MIT"
 
 [features]
-default = ["macos", "windows", "x11"]
+default = []
 
 macos = []
-wayland = []
 windows = []
+
 x11 = []
+wayland = []
+
+opengl = []
+vulkan = []
 
 [dependencies]
+carton_common = { path = "../common", version = "0.1" }
+carton_mvvm = { path = "../mvvm", version = "0.1" }
 
 [build-dependencies]
 bindgen = "0.53.1"
+pkg-config = "0.3.19"

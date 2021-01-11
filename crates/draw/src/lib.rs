@@ -1,12 +1,12 @@
 //! TODO: document this
 
-use crate::view::View;
+pub mod draw_call;
+pub mod drawer;
 
 /// TODO: document this
-pub trait Scene {
-    type RootView: View;
-
-    fn build(&self) -> Self::RootView;
+pub mod prelude {
+    pub use crate::draw_call::DrawCall;
+    pub use crate::drawer::Drawer;
 }
 
 #[cfg(test)]

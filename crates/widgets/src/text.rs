@@ -1,17 +1,54 @@
 //! TODO: document this
 
-use carton_mvvm::widget::Widget;
+use std::fmt;
+
+use carton_mvvm::View;
 
 /// TODO: document this
-pub struct Text;
+#[derive(Debug, PartialEq, Clone, Hash)]
+pub struct Text {
+    content: String,
+}
 
-impl Widget for Text {
+impl Text {
+    /// TODO: document this
+    pub fn new() -> Self {
+        Self {
+            content: String::new(),
+        }
+    }
+
+    /// TODO: document this
+    pub fn with_content(content: String) -> Self {
+        Self {
+            content,
+        }
+    }
+}
+
+impl View for Text {
     fn layout(&self) {
         unimplemented!()
     }
 
-    fn paint(&self) {
+    fn draw(&self) {
         unimplemented!()
+    }
+
+    fn update(&self) {
+        unimplemented!()
+    }
+}
+
+impl fmt::Display for Text {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        self.content.fmt(f)
+    }
+}
+
+impl Default for Text {
+    fn default() -> Self {
+        Self::new()
     }
 }
 

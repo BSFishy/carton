@@ -11,9 +11,17 @@ repository = "https://github.com/BSFishy/carton"
 license = "MIT"
 
 [features]
-default = ["widgets"]
+default = ["default_platforms", "widgets"]
+default_platforms = ["windows", "macos", "x11"]
 
 widgets = ["carton_widgets"]
+
+windows = ["carton_shell/windows"]
+macos = ["carton_shell/macos"]
+x11 = ["carton_shell/x11"]
+wayland = ["carton_shell/wayland"]
+opengl = ["carton_shell/opengl"]
+vulkan = ["carton_shell/vulkan"]
 
 [workspace]
 members = ["crates/*"]
@@ -23,6 +31,5 @@ carton_common = { path = "crates/common", version = "0.1" }
 carton_event = { path = "crates/event", version = "0.1" }
 carton_mvvm = { path = "crates/mvvm", version = "0.1" }
 carton_shell = { path = "crates/shell", version = "0.1" }
-carton_window = { path = "crates/window", version = "0.1" }
 
 carton_widgets = { path = "crates/widgets", version = "0.1", optional = true }

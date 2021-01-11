@@ -1,10 +1,8 @@
 //! TODO: document this
 
-/// TODO: document this
-pub trait Widget {
-    fn layout(&self);
-
-    fn paint(&self);
+#[derive(Debug, Clone, Hash)]
+pub struct Observer<T> {
+    value: T,
 }
 
 #[cfg(test)]

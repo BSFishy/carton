@@ -1,8 +1,7 @@
 //! TODO: document this
 
-/// TODO: document this
-pub trait Model {
-    
+pub struct Binding {
+
 }
 
 #[cfg(test)]

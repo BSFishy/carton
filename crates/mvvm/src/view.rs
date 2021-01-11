@@ -1,58 +1,36 @@
 //! TODO: document this
 
-use crate::widget::Widget;
-
 /// TODO: document this
 pub trait View {
     /// TODO: document this
-    type Output: View;
+    fn layout(&self);
 
     /// TODO: document this
-    fn build(&self) -> Self::Output;
-}
+    fn draw(&self);
 
-/// TODO: document this
-#[derive(Debug, Clone)]
-pub struct WidgetView<T: Widget> {
-    widget: T,
-}
-
-impl <T: Widget> WidgetView<T> {
     /// TODO: document this
-    pub fn new(widget: T) -> Self {
-        Self {
-            widget,
+    fn update(&self);
+}
+
+impl<T> View for Option<T> where T: View {
+    fn layout(&self) {
+        if let Some(view) = self {
+            view.layout()
+        }
+    }
+
+    fn draw(&self) {
+        if let Some(view) = self {
+            view.draw()
+        }
+    }
+
+    fn update(&self) {
+        if let Some(view) = self {
+            view.update()
         }
     }
 }
-
-impl <T: Widget> WidgetView<T> {
-    /// TODO: document this
-    pub fn get_widget(&self) -> &T {
-        &self.widget
-    }
-}
-
-impl <T: Widget> View for WidgetView<T> where T: Clone {
-    type Output = Self;
-
-    fn build(&self) -> Self {
-        self.clone()
-    }
-}
-
-// /// TODO: document this
-// #[derive(Debug, Hash)]
-// pub struct BuildCtx {
-//
-// }
-//
-// impl BuildCtx {
-//     /// TODO: document this
-//     pub fn bind(&mut self) -> &mut Self {
-//         self
-//     }
-// }
 
 #[cfg(test)]
 mod tests {

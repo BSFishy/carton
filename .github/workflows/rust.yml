@@ -16,7 +16,7 @@ jobs:
         # Until we implement these platforms, comment this out
         # platform: [ ubuntu-latest, macos-latest, windows-latest ]
         platform: [ ubuntu-latest ]
-        toolchain: [ stable, nightly ]
+        toolchain: [ stable, nightly, 1.48.0 ]
     runs-on: ${{ matrix.platform }}
     steps:
     - uses: actions/checkout@v2
